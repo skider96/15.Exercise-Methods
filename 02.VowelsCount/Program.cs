@@ -4,7 +4,16 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            List<int> first = ReadList();
+            System.Console.WriteLine(first[1]);
+
+        }
+        public static List<int> ReadList()
+        {
+            return Console.ReadLine()
+                        .Split()
+                        .Select(int.Parse)
+                        .ToList();
         }
     }
 }
