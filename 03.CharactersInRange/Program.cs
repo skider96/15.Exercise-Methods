@@ -4,24 +4,30 @@
     {
         static void Main(string[] args, string? s)
         {
-            List<char> symbols = new List<char>(2);
-
+            char startNumber = char.Parse(Console.ReadLine());
+            char finalNumber = char.Parse(Console.ReadLine());
             List<char> symbolsFromAscii = new List<char>();
+            int middleNumber = 0;
+            if (startNumber > finalNumber)
+            {
+               middleNumber = startNumber - finalNumber;
+               for (int i = finalNumber; i < startNumber; i++)
+               {
+                   symbolsFromAscii.Add((char)i);
+               }
+            }
+            else
+            {
+                for (int i = startNumber +1; i < finalNumber; i++)
+                {
+                    symbolsFromAscii.Add((char)i);
+                }
+            }
 
-            for (var i = 0; i <= 2; i++)
-            {
-                char input = char.Parse(Console.ReadLine());
-                symbols.Add(input);
-            }
-            if (symbols[0] > symbols[1])
-            {
-                symbols.Reverse();
-            }
-
-            for (var i = symbols[0] ;i < symbols[1]; i++)
-            {
-                symbolsFromAscii.Add(symbols[i]);
-            }
+            //else
+            //{
+            //    middleNumber = finalNumber - startNumber;
+            //}
 
             Console.WriteLine(string.Join(" ", symbolsFromAscii));
 
