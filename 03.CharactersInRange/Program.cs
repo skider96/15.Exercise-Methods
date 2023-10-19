@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        static void Main(string[] args, string? s)
+        static void Main()
         {
             char startNumber = char.Parse(Console.ReadLine());
             char finalNumber = char.Parse(Console.ReadLine());
@@ -10,15 +10,15 @@
             int middleNumber = 0;
             if (startNumber > finalNumber)
             {
-               middleNumber = startNumber - finalNumber;
-               for (int i = finalNumber; i < startNumber; i++)
-               {
-                   symbolsFromAscii.Add((char)i);
-               }
+                middleNumber = startNumber - finalNumber;
+                for (int i = finalNumber +1; i < startNumber; i++)
+                {
+                    symbolsFromAscii.Add((char)i);
+                }
             }
             else
             {
-                for (int i = startNumber +1; i < finalNumber; i++)
+                for (int i = startNumber + 1; i < finalNumber; i++)
                 {
                     symbolsFromAscii.Add((char)i);
                 }
