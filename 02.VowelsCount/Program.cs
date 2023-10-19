@@ -9,15 +9,14 @@
             for (int i = 0; i < input.Length; i++)
             {
                 char letters = input[i];
-
-                first += letters;
-
+                // a, e, i, o, and u
+                if (letters == 'a' || letters == 'e' || letters == 'i' || letters == 'o' || letters == 'u' ||
+                    letters == 'A' || letters == 'E' || letters == 'I' || letters == 'O' || letters == 'U')
+                {
+                    first.Add(letters);
+                }
             }
-
-
-
-            System.Console.WriteLine(first[1]);
-
+            System.Console.WriteLine(first.Count);
         }
         public static List<int> ReadList()
         {
