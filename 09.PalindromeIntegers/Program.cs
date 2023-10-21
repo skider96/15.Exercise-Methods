@@ -4,7 +4,16 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            List<int> name = Console.ReadLine()
+                .Split()
+                .Select(int.Parse)
+                .ToList();
+
+
+            string command;
+            while ((command = Console.ReadLine()) != "end")
+            {
+            }
         }
     }
 }
