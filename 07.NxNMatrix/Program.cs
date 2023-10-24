@@ -12,7 +12,7 @@
             {
                 for (int col = 0; col < n; col++)
                 {
-                    Console.Write(n);
+                    Console.Write(n + " ");
                 }
                 Console.WriteLine();
             }
