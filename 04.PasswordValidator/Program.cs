@@ -57,9 +57,7 @@ namespace PasswordValidator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter your password: ");
             string password = Console.ReadLine();
-
             bool isLengthValid = password.Length >= 6 && password.Length <= 10;
             bool isAlphanumeric = password.All(char.IsLetterOrDigit);
             bool hasTwoDigits = password.Count(char.IsDigit) >= 2;
