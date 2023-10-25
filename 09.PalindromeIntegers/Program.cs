@@ -6,30 +6,32 @@
         {
             string command;
             List<int> number = new List<int>();
-bool isCycling = false;
+
             int n = 0;
             int reversedNumber = 0;
             int digit = 1;
-            while ((command = Console.ReadLine()) != "end")
+
+            while ((command = Console.ReadLine()) != "END")
             {
                 number.Add(int.Parse(command));
+                bool isPalindrome = false;
+                int copyNumber = number[n];
 
-                while (isCycling)
+                while (number[n] != 0)
                 {
                     digit = number[n] % 10;
                     reversedNumber = reversedNumber * 10 + digit;
-                    digit = number[n] / 10;
-                    if (digit == 0)
-                    {
-                        isCycling = false;
-                    }
+                    number[n] = number[n] / 10;
+
                 }
-
-
+                if (reversedNumber == copyNumber)
+                {
+                    isPalindrome = true;
+                }
+                reversedNumber = 0;
+                System.Console.WriteLine(isPalindrome);
                 n++;
             }
-            System.Console.WriteLine(digit);
-            System.Console.WriteLine(string.Join(" ", number));
         }
     }
 }
