@@ -1,4 +1,5 @@
-﻿namespace _11.ArrayManipulator_not_included_
+﻿using System.Linq;
+namespace _11.ArrayManipulator_not_included_
 {
     internal class Program
     {
@@ -14,6 +15,7 @@
             {
                 int index = 0;
                 string[] arguments = command.Split();
+                List<int> oddOrEvenNumbers = new List<int>();
                 if (arguments[0] == "exchange")
                 {
                     index = int.Parse(arguments[1]);
@@ -31,16 +33,72 @@
                 }
                 else if (arguments[0] == "max")
                 {
+
                     if (arguments[1] == "even")
                     {
-
+                        AddingEvenNumberInList(list, oddOrEvenNumbers);
+                        printMaxNumber(oddOrEvenNumbers);
                     }
                     else if (arguments[1] == "odd")
                     {
-
+                        addingOddNumberInList(list, oddOrEvenNumbers);
+                        printMaxNumber(oddOrEvenNumbers);
                     }
                 }
+                else if (arguments[0] == "min")
+                {
+                    if (arguments[1] == "even")
+                    {
+                        AddingEvenNumberInList(list, oddOrEvenNumbers);
+                        PrintMinNumber(oddOrEvenNumbers);
+                    }
+                    else if (arguments[1] == "odd")
+                    {
+                        addingOddNumberInList(list, oddOrEvenNumbers);
+                        PrintMinNumber(oddOrEvenNumbers);
+                    }
+                }
+                // else if ()
+                // {
+                    
+                // }
             }
+        }
+
+        private static void PrintMinNumber(List<int> oddOrEvenNumbers)
+        {
+            int minOddOrENumber = oddOrEvenNumbers.Min();
+            System.Console.WriteLine(minOddOrENumber);
+            oddOrEvenNumbers.Clear();
+        }
+
+        private static void addingOddNumberInList(List<int> list, List<int> oddOrEvenNumbers)
+        {
+            for (var i = 0; i < list.Count; i++)
+            {
+                if (list[i] % 2 == 0)
+                {
+                    oddOrEvenNumbers.Add(list[i]);
+                }
+            }
+        }
+
+        private static void AddingEvenNumberInList(List<int> list, List<int> oddOrEvenNumbers)
+        {
+            for (var i = 0; i < list.Count; i++)
+            {
+                if (list[i] % 2 != 0)
+                {
+                    oddOrEvenNumbers.Add(list[i]);
+                }
+            }
+        }
+
+        private static void printMaxNumber(List<int> oddOrEvenNumbers)
+        {
+            int maxOddOrENumber = oddOrEvenNumbers.Max();
+            System.Console.WriteLine(maxOddOrENumber);
+            oddOrEvenNumbers.Clear();
         }
     }
 }
